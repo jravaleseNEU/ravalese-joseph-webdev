@@ -8,5 +8,7 @@ Purpose of the Repository: Summer 2 2017 Web Developement Course
 Important Links:
 
 Heroku- https://ravalese-joseph-webdev.herokuapp.com
+
 Project-
+
 Assignment-
