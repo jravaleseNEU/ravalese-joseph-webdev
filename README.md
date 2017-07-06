@@ -1,8 +1,14 @@
-# web-dev-template
+About Me
 
-1. git clone https://github.com/jannunzi/web-dev-template.git
-1. cd web-dev-template
-1. npm install
-1. mongod
-1. node server.js
-1. browse to localhost:3000
+I am a third year undergraduate Computer Engineering Student here at Northeastern, originally from West Hartford, CT, I am currently working part time at the Harvard School of Public Health within the IT department.
+
+Purpose of the Repository: Summer 2 2017 Web Developement Course
+
+
+Important Links:
+
+Heroku- https://ravalese-joseph-webdev.herokuapp.com
+
+Project-
+
+Assignment-
