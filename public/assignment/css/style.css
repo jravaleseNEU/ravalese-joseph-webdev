@@ -1,0 +1,13 @@
+input {
+    margin-bottom: 5px;
+}
+
+input, textarea {
+margin-botton: 5px;
+}
+
+.jr .jr-split-view-left {
+    position absolute;
+    top: 60px;
+    
+}
