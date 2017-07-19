@@ -1,13 +1,73 @@
-input {
+textarea {
     margin-bottom: 5px;
+}
+
+body {
+    padding-top: 60px;
 }
 
 input, textarea {
 margin-botton: 5px;
 }
 
-.jr .jr-split-view-left {
-    position absolute;
+input {
+    margin-botton: 10px;
+}
+
+
+a {
+    color: #fff;
+}
+
+a.glyphicon-plus-color {
+    color: #fff;
+}
+
+a.glyphicon-cog-color {
+    color:#0f0f0f;
+}
+
+.navbar-default {
+    background-color: #46b8da;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.jr-split-view-right {
+    position: absolute;
     top: 60px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+
+.jr-split-view-left {
+    position: absolute;
+    top: 60px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+    .col-lg-9.jr-split-view-right {
+        width: 75%;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        bottom: 0px;
+        overflow-y: scroll;
+
+    }
     
+}
+
+.navbar-nav>li, .navbar-nav {
+    float: left !important;
 }
