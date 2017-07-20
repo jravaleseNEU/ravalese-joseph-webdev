@@ -53,7 +53,7 @@
         }
         function findWidgetById(widgetId) {
             for(var u in widgets) {
-                if(widgets[u]._id === widgetId {
+                if(widgets[u]._id === widgetId) {
                     return widgets[u];
                 }
             }

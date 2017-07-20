@@ -47,7 +47,7 @@
         }
         function findPageById(pageId) {
             for(var u in pages) {
-                if(pages[u]._id === pageId {
+                if(pages[u]._id === pageId) {
                     return pages[u];
                 }
             }
