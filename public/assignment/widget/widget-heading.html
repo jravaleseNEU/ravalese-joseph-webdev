@@ -43,7 +43,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon-cog-color" href="../user-pages/profile.html">
+            <li><a class="glyphicon-cog-color" href="../user/templates/profile.view.client.html">
                 <span class="glyphicon glyphicon-user pull-right"> </span>
             </a>
         </ul>
@@ -55,51 +55,33 @@
 <div class="container-fluid">
 
 
-    <label for="name">Name</label>
-    <input name="name"
-           value="myWidget"
-           class="form-control"
-           id="name"/>
+    <div class=" col-xs-12 jr-split-view-right"> <!--right side-->
+        <label for="name">Name</label>
+        <input name="name"
+               value=""
+               class="form-control"
+               id="name"/>
 
-    <label for="text">Text</label>
-    <textarea name="text"
-              placeholder="WackyWidget3000"
-              rows="3"
-              class="form-control"
-              id="Text"></textarea>
+        <label for="text">Text</label>
+        <textarea name="text"
+                  placeholder="US Senate Reaches Compromise"
+                  rows="3"
+                  class="form-control"
+                  id="Text"></textarea>
 
-    <label for="URL">URL</label>
-    <input name="URL"
-           type="url"
-           placeholder="http://facebook/facebook-picture/image"
-           class="form-control"
-           id="URL"/>
-
-    <label for="">Width</label>
-    <input name="width"
-           type="number"
-           value="100%"
-           class="form-control"
-           id="width"/>
-
-    <label for="upload">Upload</label>
-    <input name="upload"
-           type="file"
-           class="form-control"
-           id="upload"/>
+        <label for="size">Size</label>
+        <input name="size"
+               type="number"
+               value="3"
+               class="form-control"
+               id="size"/>
 
 
-    <a class="btn btn-default btn-primary btn-block"
-       href="../website-pages/website-list.html"
-       role="button">Upload Image</a>
+        <a class="btn btn-default btn-danger btn-block"
+           href="widget-list.html"
+           role="button">Delete</a>
 
-    <a class="btn btn-default btn-danger btn-block"
-       href="widget-list.html"
-       role="button">Delete</a>
-
-        
-</div>
-
+    </div>
 </div>
 
 

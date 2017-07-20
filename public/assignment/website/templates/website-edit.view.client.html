@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <!--<link href="https:maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> -->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/style.css" rel="stylesheet"/>
-</head>
+
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -15,13 +7,12 @@
         <div class="navbar-header">
 
             <ul class="nav navbar-nav navbar-left">
-                <li><a class="glyphicon-cog-color" href="website-list.html">
+                <li><a class="glyphicon-cog-color" href="website-list.view.client.html">
                     <span class="glyphicon glyphicon-chevron-left pull-left"> </span>
                 </a>
-
             </ul>
 
-            <a class="navbar-brand" href="#">New Website</a>
+            <a class="navbar-brand" href="#">Website Edit</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +22,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon-cog-color" href="website-list.html">
+                <li><a class="glyphicon-cog-color" href="website-list.view.client.html">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
                 </li>
@@ -40,17 +31,17 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon-cog-color" href="../user-pages/profile.html">
+            <li><a class="glyphicon-cog-color" href="../../user/templates/profile.view.client.html">
                 <span class="glyphicon glyphicon-user pull-right"> </span>
             </a>
         </ul>
 
     </div>
 </nav>
-
 
 <div class="container-fluid">
 
@@ -64,7 +55,7 @@
                         <div class="col-sm-3 hidden-xs">Visits</div>
                         <div class="col-xs-3">
 
-                            <a href="website-new.html">
+                            <a href="website-new.view.client.html">
                                 <span class="glyphicon glyphicon-plus pull-right"> </span>
                             </a>
                         </div>
@@ -77,13 +68,13 @@
                     <div class="row">
                         <div class="col-xs-6 col-sm-3">
                             <a class="glyphicon glyphicon-cog-color"
-                               href="../page-pages/page-list.html">Site 1</a>
+                               href="../../page-pages/page-list.html">Site 1</a>
                         </div>
                         <div class="col-xs-3"></div>
                         <div class="col-sm-3 hidden-xs"></div>
                         <div class="col-xs-3">
                             <a class="glyphicon-cog-color"
-                               href="website-edit.html">
+                               href="website-edit.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"> </span>
                             </a>
                         </div>
@@ -94,13 +85,13 @@
                     <div class="row">
                         <div class="col-xs-6 col-sm-3">
                             <a class="glyphicon glyphicon-cog-color"
-                               href="../page-pages/page-list.html">Site 2</a>
+                               href="../../page-pages/page-list.html">Site 2</a>
                         </div>
                         <div class="col-xs-3"></div>
                         <div class="col-sm-3 hidden-xs"></div>
                         <div class="col-xs-3">
                             <a class="glyphicon-cog-color"
-                               href="website-edit.html">
+                               href="website-edit.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"> </span>
                             </a>
                         </div>
@@ -112,13 +103,13 @@
                     <div class="row">
                         <div class="col-xs-6 col-sm-3">
                             <a class="glyphicon glyphicon-cog-color"
-                               href="../page-pages/page-list.html">Site 3</a>
+                               href="../../page-pages/page-list.html">Site 3</a>
                         </div>
                         <div class="col-xs-3"></div>
                         <div class="col-sm-3 hidden-xs"></div>
                         <div class="col-xs-3">
                             <a class="glyphicon-cog-color"
-                               href="website-edit.html">
+                               href="website-edit.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"> </span>
                             </a>
                         </div>
@@ -131,13 +122,13 @@
                     <div class="row">
                         <div class="col-xs-6 col-sm-3">
                             <a class="glyphicon glyphicon-cog-color"
-                               href="../page-pages/page-list.html">Site 4</a>
+                               href="../../page-pages/page-list.html">Site 4</a>
                         </div>
                         <div class="col-xs-3"></div>
                         <div class="col-sm-3 hidden-xs"></div>
                         <div class="col-xs-3">
                             <a class="glyphicon-cog-color"
-                               href="website-edit.html">
+                               href="website-edit.view.client.html">
                                 <span class="glyphicon glyphicon-cog pull-right"> </span>
                             </a>
                         </div>
@@ -151,32 +142,23 @@
 
 
         <div class="col-lg-9 col-xs-12 jr-split-view-right"> <!--right side-->
-            <label for="websitename">Name</label>
+            <label for="websitename">Website Name</label>
             <input name="websitename"
-                   placeholder="Name"
+                   value="Blogger"
                    class="form-control"
                    id="websitename"/>
 
             <label for="description">Description</label>
             <textarea name="description"
                       rows="5"
-                      placeholder="Description"
                       class="form-control"
-                      id="description"></textarea>
+                      id="description">Blogger is a website...</textarea>
 
-
-            <a class="btn btn-default btn-primary btn-block"
-               href="../website-pages/website-list.html"
-               role="button">Create</a>
 
             <a class="btn btn-default btn-danger btn-block"
-               href="../website-pages/website-list.html"
-               role="button">Cancel</a>
+               href="website-list.view.client.html"
+               role="button">Delete</a>
         </div>
     </div>
 
 </div>
-
-
-</body>
-</html>
