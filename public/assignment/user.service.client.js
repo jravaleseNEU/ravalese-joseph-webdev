@@ -64,5 +64,10 @@
             return null;
         }
 
+        function deleteUser(user) {
+            users.pop(user);
+            return null;
+        }
+
     }
 })();
