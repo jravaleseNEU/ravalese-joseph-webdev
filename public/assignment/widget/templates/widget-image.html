@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Profile</title>
-    <!--<link href="https:maxcdn.boostrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> -->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../css/style.css" rel="stylesheet"/>
-</head>
-<body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -15,13 +5,13 @@
         <div class="navbar-header">
 
             <ul class="nav navbar-nav navbar-left">
-                <li><a class="glyphicon-cog-color" href="page-list.html">
+                <li><a class="glyphicon-cog-color" href="widget-list.html">
                     <span class="glyphicon glyphicon-chevron-left pull-left"> </span>
                 </a>
 
             </ul>
 
-            <a class="navbar-brand" href="#">Edit Page</a>
+            <a class="navbar-brand" href="#">Widget Edit</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +21,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon-cog-color" href="page-list.html">
+                <li><a class="glyphicon-cog-color" href="widget-list.html">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
                 </li>
@@ -43,7 +33,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon-cog-color" href="../user/templates/profile.view.client.html">
+            <li><a class="glyphicon-cog-color" href="../../user/templates/profile.view.client.html">
                 <span class="glyphicon glyphicon-user pull-right"> </span>
             </a>
         </ul>
@@ -57,25 +47,45 @@
 
     <label for="name">Name</label>
     <input name="name"
-           value="Blog Post"
+           value="myWidget"
            class="form-control"
            id="name"/>
 
-    <label for="title">Title</label>
-    <input name="title"
-           placeholder="Page Name"
-           class="form-control"
-           id="title"/>
+    <label for="text">Text</label>
+    <textarea name="text"
+              placeholder="WackyWidget3000"
+              rows="3"
+              class="form-control"
+              id="Text"></textarea>
 
+    <label for="URL">URL</label>
+    <input name="URL"
+           type="url"
+           placeholder="http://facebook/facebook-picture/image"
+           class="form-control"
+           id="URL"/>
+
+    <label for="">Width</label>
+    <input name="width"
+           type="number"
+           value="100%"
+           class="form-control"
+           id="width"/>
+
+    <label for="upload">Upload</label>
+    <input name="upload"
+           type="file"
+           class="form-control"
+           id="upload"/>
+
+
+    <a class="btn btn-default btn-primary btn-block"
+       href="../../website/templates/website-list.view.client.html"
+       role="button">Upload Image</a>
 
     <a class="btn btn-default btn-danger btn-block"
-       href="page-list.html"
+       href="widget-list.html"
        role="button">Delete</a>
 
+        
 </div>
-
-</div>
-
-
-</body>
-</html>
