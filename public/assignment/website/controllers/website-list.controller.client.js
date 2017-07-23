@@ -6,12 +6,12 @@
     function websiteListController($routeParams, websiteService) {
         var model = this;
 
-        var userId = $routeParams.userId;
+        model.userId = $routeParams.userId;
 
 
 
         function init() {
-            model.websites = websiteService.findWebsitesByUser(userId);
+            model.websites = websiteService.findWebsitesByUser(model.userId);
         }
         init();
     }

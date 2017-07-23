@@ -41,8 +41,8 @@
             })
             .when("/user/:userId/website/new", {
                 templateUrl: "website/templates/website-new.view.client.html",
-                // controller: "websiteListController",
-                // controllerAs: "model"
+                controller: "websiteListController",
+                controllerAs: "model"
             })
             .when("/user/:userId/website/:wid", {
                 templateUrl: "website/templates/website-edit.view.client.html",
