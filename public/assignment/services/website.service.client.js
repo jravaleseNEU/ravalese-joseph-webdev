@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("WamApp")
-        .factory("websiteService", websiteService);
+        .service("websiteService", websiteService);
 
     function websiteService() {
 
@@ -16,13 +16,14 @@
         ];
 
         var api = {
-            "findWebsiteByUser": findWebsiteByUser(),
+            "findWebsitesByUser": findWebsitesByUser,
             "findWebsiteById": findWebsiteById,
             "updateWebsite": updateWebsite,
             "deleteWebsite": deleteWebsite,
             "createWebsite": createWebsite
         };
         return api;
+
 
         function updateWebsite(websiteId, website) {
             for(var u in websites) {
@@ -33,6 +34,7 @@
             }
             return null;
         }
+
 //WORK ON THIS
         function createWebsite(userId, website) {
             website._id = (new Date()).getTime() + "";
@@ -41,14 +43,16 @@
             return website;
         }
 
-        function findWebsiteByUser(userId) {
-            for(var u in websites) {
-                if(websites[u].developerId === userId) {
-                    return websites[u];
+        function findWebsitesByUser(userId) {
+            var sites = [];
+            for(var w in websites) {
+                if(websites[w].developerId === userId) {
+                    sites.push(websites[w]);
                 }
             }
-            return null;
+            return sites;
         }
+
         function findWebsiteById(userId) {
             for(var u in websites) {
                 if(websites[u]._id === websiteId) {
