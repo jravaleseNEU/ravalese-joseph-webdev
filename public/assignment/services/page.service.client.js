@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("WamApp")
-        .factory("pageService", pageService);
+        .service("pageService", pageService);
 
     function pageService() {
 
@@ -12,7 +12,7 @@
         ];
 
         var api = {
-            "findPageByWebsiteId": findPageByWebsiteId,
+            "findPagesByWebsiteId": findPagesByWebsiteId,
             "findPageById": findPageById,
             "updatePage": updatePage,
             "deletePage": deletePage,
@@ -37,14 +37,17 @@
             return page;
         }
 
-        function findPageByWebsiteId(websiteId) {
+        function findPagesByWebsiteId(websiteId) {
+            var pagelist= [];
+
             for(var u in pages) {
                 if(pages[u].websiteId === websiteId) {
-                    return pages[u];
+                    pagelist.push(pages[u]);
                 }
             }
-            return null;
+            return pagelist;
         }
+
         function findPageById(pageId) {
             for(var u in pages) {
                 if(pages[u]._id === pageId) {

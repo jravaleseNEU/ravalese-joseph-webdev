@@ -45,100 +45,38 @@
 
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-xs-3 visible-lg jr-split-view-left ">  <!--left side-->
-            <ul class="list-group">
-                <li class="list-group-item active">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">Name</div>
-                        <div class="col-xs-3">Updated</div>
-                        <div class="col-sm-3 hidden-xs">Visits</div>
-                        <div class="col-xs-3">
+    div class="row">
+    <div class="col-xs-3 visible-lg jr-split-view-left ">  <!--left side-->
+        <ul class="list-group">
+            <li class="list-group-item active">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">Name</div>
+                    <div class="col-xs-3">Updated</div>
+                    <div class="col-sm-3 hidden-xs">Visits</div>
+                    <div class="col-xs-3">
 
-                            <a href="website-new.view.client.html">
-                                <span class="glyphicon glyphicon-plus pull-right"> </span>
-                            </a>
-                        </div>
+                        <a href="#!/user/{{model.userId}}/website/new">
+                            <span class="glyphicon glyphicon-plus pull-right"> </span>
+                        </a>
                     </div>
+                </div>
 
-                </li>
+            </li>
 
 
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <a class="glyphicon glyphicon-cog-color"
-                               href="../../page/templates/page-list.html">Site 1</a>
-                        </div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-sm-3 hidden-xs"></div>
-                        <div class="col-xs-3">
-                            <a class="glyphicon-cog-color"
-                               href="website-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"> </span>
-                            </a>
-                        </div>
+            <li ng-repeat="website in model.websites" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-4">{{website.name}}</div>
+                    <div class="col-xs-6 col-sm-3">2017-07-05</div>
+                    <div class="col-sm-3 hidden-xs">3,123,234</div>
+                    <div class="col-xs-2">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
                     </div>
-                </li>
+                </div>
+            </li>
+        </ul>
 
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <a class="glyphicon glyphicon-cog-color"
-                               href="../../page/templates/page-list.html">Site 2</a>
-                        </div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-sm-3 hidden-xs"></div>
-                        <div class="col-xs-3">
-                            <a class="glyphicon-cog-color"
-                               href="website-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"> </span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <a class="glyphicon glyphicon-cog-color"
-                               href="../../page/templates/page-list.html">Site 3</a>
-                        </div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-sm-3 hidden-xs"></div>
-                        <div class="col-xs-3">
-                            <a class="glyphicon-cog-color"
-                               href="website-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"> </span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </li>
-
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-3">
-                            <a class="glyphicon glyphicon-cog-color"
-                               href="../../page/templates/page-list.html">Site 4</a>
-                        </div>
-                        <div class="col-xs-3"></div>
-                        <div class="col-sm-3 hidden-xs"></div>
-                        <div class="col-xs-3">
-                            <a class="glyphicon-cog-color"
-                               href="website-edit.view.client.html">
-                                <span class="glyphicon glyphicon-cog pull-right"> </span>
-                            </a>
-                        </div>
-                    </div>
-
-
-                </li>
-            </ul>
-
-        </div>
+    </div>
 
 
         <div class="col-lg-9 col-xs-12 jr-split-view-right"> <!--right side-->

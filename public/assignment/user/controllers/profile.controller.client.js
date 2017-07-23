@@ -2,7 +2,7 @@
 
     angular
         .module("WamApp")
-        .controller("profileController", profileController)
+        .controller("profileController", profileController);
 
     function profileController($routeParams, userService) {
         var model = this;
