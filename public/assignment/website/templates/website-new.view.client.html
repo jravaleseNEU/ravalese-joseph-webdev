@@ -71,7 +71,9 @@
                         <div class="col-xs-6 col-sm-3">2017-07-05</div>
                         <div class="col-sm-3 hidden-xs">3,123,234</div>
                         <div class="col-xs-2">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}">
+                            <span class="glyphicon glyphicon-cog-color glyphicon-cog pull-right"></span>
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -96,11 +98,12 @@
 
 
             <a class="btn btn-default btn-primary btn-block"
-               href="/website-list.html"
+               ng-click="model.createWebsite(model.userId, model.website)"
+               href="#!/user/{{model.userId}}/website/"
                role="button">Create</a>
 
             <a class="btn btn-default btn-danger btn-block"
-               href="/website-list.html"
+               href="#!/user/{{model.userId}}/website/"
                role="button">Cancel</a>
         </div>
     </div>

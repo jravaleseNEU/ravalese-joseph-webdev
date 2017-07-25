@@ -22,7 +22,9 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon-cog-color" href="page-list.view.client.html">
+                <li><a class="glyphicon-cog-color"
+                       ng-click="model.createPage(model.websiteId,model.page)"
+                       href="page-list.view.client.html">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
                 </li>
@@ -61,7 +63,7 @@
 
 
     <a class="btn btn-default btn-danger btn-block"
-       href="page-list.view.client.html"
+       href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page"
        role="button">Cancel</a>
 
 </div>

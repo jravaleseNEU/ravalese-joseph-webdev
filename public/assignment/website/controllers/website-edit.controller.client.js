@@ -7,9 +7,10 @@
         var model = this;
 
         model.userId = $routeParams.userId;
+        model.websiteId = $routeParams.wid;
 
         function init() {
-            model.websites = websiteService.findWebsitesForUser(model.userId);
+            model.website = websiteService.findWebsiteById(model.websiteId);
         }
         init();
 
