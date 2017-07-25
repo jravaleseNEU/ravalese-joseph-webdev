@@ -82,18 +82,20 @@
         <div class="col-lg-9 col-xs-12 jr-split-view-right"> <!--right side-->
             <label for="websitename">Website Name</label>
             <input name="websitename"
-                   value="Blogger"
+                   ng-model="{{model.website.name}}"
                    class="form-control"
                    id="websitename"/>
 
             <label for="description">Description</label>
             <textarea name="description"
+                      ng-model="{{model.website.description}}"
                       rows="5"
                       class="form-control"
-                      id="description">Blogger is a website...</textarea>
+                      id="description"></textarea>
 
 
             <a class="btn btn-default btn-danger btn-block"
+               ng-click="model.website.deleteWebsite(websiteId)"
                href="website-list.view.client.html"
                role="button">Delete</a>
         </div>

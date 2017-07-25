@@ -17,7 +17,8 @@
             "findUserByUsernameAndPassword": findUserByUsernameAndPassword,
             "findUserById": findUserById,
             "registerUser": registerUser,
-            "updateUser": updateUser
+            "updateUser": updateUser,
+            "deleteUser": deleteUser
         };
         return api;
 
@@ -64,8 +65,12 @@
             return null;
         }
 
-        function deleteUser(user) {
-            users.pop(user);
+        function deleteUser(userId) {
+            for(var u in users) {
+                if(users[u]._id === userId) {
+                    users.pop(users[u]);
+                }
+            }
             return null;
         }
 

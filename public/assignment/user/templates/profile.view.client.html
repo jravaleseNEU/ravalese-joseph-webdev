@@ -84,11 +84,11 @@
        role="button">Logout</a>
 
     <a class="btn btn-default btn-danger btn-block"
-       ng-click="model.unregister()"
+       ng-click="model.unregister(model.userId)"
        role="button">Unregister</a>
 
     <a class="btn btn-default btn-primary btn-block"
-       ng-click="model.updateUser()"
+       ng-click="model.updateUser(model.userId, model.user)"
        role="button">Update</a>
 </div>
 

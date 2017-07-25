@@ -3,6 +3,13 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
             <ul class="nav navbar-nav navbar-left">
                 <li><a class="glyphicon-cog-color" href="widget-list.html">
@@ -41,51 +48,4 @@
     </div>
 </nav>
 
-
-<div class="container-fluid">
-
-
-    <label for="name">Name</label>
-    <input name="name"
-           value="myWidget"
-           class="form-control"
-           id="name"/>
-
-    <label for="text">Text</label>
-    <textarea name="text"
-              placeholder="WackyWidget3000"
-              rows="3"
-              class="form-control"
-              id="Text"></textarea>
-
-    <label for="URL">URL</label>
-    <input name="URL"
-           type="url"
-           placeholder="http://facebook/facebook-picture/image"
-           class="form-control"
-           id="URL"/>
-
-    <label for="">Width</label>
-    <input name="width"
-           type="number"
-           value="100%"
-           class="form-control"
-           id="width"/>
-
-    <label for="upload">Upload</label>
-    <input name="upload"
-           type="file"
-           class="form-control"
-           id="upload"/>
-
-
-    <a class="btn btn-default btn-primary btn-block"
-       href="../../website/templates/website-list.view.client.html"
-       role="button">Upload Image</a>
-
-    <a class="btn btn-default btn-danger btn-block"
-       href="widget-list.html"
-       role="button">Delete</a>
-
-        
-</div>
+<iframe width="560" height="315" src="{{model.trustUrlResource(widget.url)}}" frameborder="0" allowfullscreen></iframe>

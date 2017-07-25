@@ -3,13 +3,6 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
 
             <ul class="nav navbar-nav navbar-left">
                 <li><a class="glyphicon-cog-color" href="widget-list.html">
@@ -48,38 +41,12 @@
     </div>
 </nav>
 
-<div class="container-fluid">
 
-    <label for="name">Name</label>
-    <input name="name"
-           value="myWidget"
-           class="form-control"
-           id="name"/>
-
-    <label for="text">Text</label>
-    <textarea name="text"
-              placeholder="WackyWidget3000"
-              rows="3"
-              class="form-control"
-              id="Text"></textarea>
-
-    <label for="URL">URL</label>
-    <input name="URL"
-           type="url"
-           placeholder="http://youtube/Vsauce/video"
-           class="form-control"
-           id="URL"/>
-
-    <label for="width">Width</label>
-    <input name="width"
-           type="number"
-           value="100%"
-           class="form-control"
-           id="width"/>
-
-
-    <a class="btn btn-default btn-danger btn-block"
-       href="widget-list.html"
-       role="button">Delete</a>
-    
+<div ng-switch="widget.size">
+    <h1 ng-switch-when="1">{{widget.text}}</h1>
+    <h2 ng-switch-when="2">{{widget.text}}</h2>
+    <h3 ng-switch-when="3">{{widget.text}}</h3>
+    <h4 ng-switch-when="4">{{widget.text}}</h4>
+    <h5 ng-switch-when="5">{{widget.text}}</h5>
+    <h6 ng-switch-when="6">{{widget.text}}</h6>
 </div>

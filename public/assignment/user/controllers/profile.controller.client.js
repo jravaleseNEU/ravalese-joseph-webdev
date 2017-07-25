@@ -21,6 +21,7 @@
         }
 
         function unregister() {
+            userService.deleteUser(user)
 
         }
     }

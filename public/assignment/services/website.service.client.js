@@ -53,7 +53,7 @@
             return sites;
         }
 
-        function findWebsiteById(userId) {
+        function findWebsiteById(websiteId) {
             for(var u in websites) {
                 if(websites[u]._id === websiteId) {
                     return websites[u];
@@ -66,9 +66,9 @@
 //WORK ON THIS
         function deleteWebsite(websiteId) {
             for(var u in websites) {
-                var _website =website[u];
+                var _website = website[u];
                 if(_website._id === websiteId) {
-                    websites.pop(website);
+                    websites.pop(website[u]);
                 }
             }
             return null;
