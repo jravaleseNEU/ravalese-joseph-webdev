@@ -64,7 +64,7 @@
                 controller: "pageNewController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/new/:pid", {
+            .when("/user/:userId/website/:wid/page/:pid", {
                 templateUrl: "page/templates/page-edit.view.client.html",
                 controller: "pageEditController",
                 controllerAs: "model"

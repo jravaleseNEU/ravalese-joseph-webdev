@@ -21,7 +21,9 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon-cog-color" href="page-list.view.client.html">
+                <li><a class="glyphicon-cog-color"
+                       ng-click="model.updatePage(websiteId,page)"
+                       href="#!/user/{{model.userId}}/website/{{website._id}}/page">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
                 </li>
@@ -44,16 +46,16 @@
 
 <div class="container-fluid">
 
-
     <label for="name">Name</label>
     <input name="name"
-           value="Blog Post"
+           ng-model="model.page.name"
+           placeholder="Blog Post"
            class="form-control"
            id="name"/>
 
     <label for="title">Title</label>
     <input name="title"
-           placeholder="Page Name"
+           placeholder="Page title"
            class="form-control"
            id="title"/>
 
