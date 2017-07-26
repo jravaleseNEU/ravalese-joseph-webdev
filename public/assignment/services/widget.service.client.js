@@ -18,7 +18,7 @@
         ];
 
         var api = {
-            "findWidgetByWebsiteId": findWidgetByWebsiteId,
+            "findWidgetByPageId": findWidgetByPageId,
             "findWidgetById": findWidgetById,
             "updateWidget": updateWidget,
             "deleteWidget": deleteWidget,

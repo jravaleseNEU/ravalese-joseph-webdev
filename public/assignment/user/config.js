@@ -73,17 +73,17 @@
             //Widget Routes
 
 
-            .when("/user/:userId/website/:wid/page/new/:pid/widget", {
+            .when("/user/:userId/website/:wid/page/:pid/widget", {
                 templateUrl: "widget/templates/widget-list.view.client.html",
                 controller: "widgetListController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/new/:pid/widget/new", {
+            .when("/user/:userId/website/:wid/page/:pid/widget/new", {
                 templateUrl: "widget/templates/widget-choose.view.client.html",
-                controller: "widgetChooseController",
+                controller: "widgetNewController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/new/:pid/widget/new/:wgid", {
+            .when("/user/:userId/website/:wid/page/:pid/widget/new/:wgid", {
                 templateUrl: "widget/templates/widget-edit.view.client.html",
                 controller: "widgetEditController",
                 controllerAs: "model"

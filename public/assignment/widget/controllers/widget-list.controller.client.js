@@ -1,13 +1,14 @@
 (function () {
     angular
         .module("WamApp")
-        .controller("pageListController", pageListController);
+        .controller("widgetListController", widgetListController);
 
-    function pageListController($routeParams, pageService) {
+    function widgetListController($routeParams, pageService) {
         var model = this;
 
         model.userId = $routeParams.userId;
         model.websiteId = $routeParams.wid;
+        model.pageId = $routeParams.pid;
         model.widgetId = $routeParams.wgid;
 
 
@@ -58,7 +59,7 @@
         }
 
         function getWidgetIncludeUrl(widgetType) {
-            return "views/widget/templates/widgets/widget-" + widgetType + ".view.client.html";
+            return "widget/templates/widget-" + widgetType + ".view.client.html";
         }
     }
 })();

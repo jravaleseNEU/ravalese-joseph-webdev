@@ -6,7 +6,7 @@
 
 
             <ul class="nav navbar-nav navbar-left">
-                <li><a class="glyphicon-cog-color" href="widget-list.html">
+                <li><a class="glyphicon-cog-color" href="#!/user/{{model.userId}}/website/{{website._id}}/page/{{model.pageId}}">
                     <span class="glyphicon glyphicon-chevron-left pull-left"> </span>
                 </a>
             </ul>
@@ -20,7 +20,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="glyphicon-cog-color" href="widget-choose.html">
+                <li><a class="glyphicon-cog-color" href="#!/user/{{model.userId}}/website/{{website._id}}/page/{{model.pageId}}/new">
                     <span class="glyphicon glyphicon-plus pull-right"> </span>
                 </a>
 
@@ -33,7 +33,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="glyphicon-cog-color" href="../../user/templates/profile.view.client.html">
+            <li><a class="glyphicon-cog-color" href="#!/profile/{{model.userId}}">
                 <span class="glyphicon glyphicon-user pull-right"> </span>
             </a>
         </ul>
@@ -48,6 +48,7 @@
         <div class="row">
             <div class="col-xs-6 col-sm-3">
                 <a class="glyphicon glyphicon-cog-color"
+                   ng-click="model.createWidget(model.pageId, model.widget)"
                    href="widget-HEADING.view.client.html">Heading</a>
             </div>
             <div class="col-xs-3"></div>
@@ -61,6 +62,7 @@
         <div class="row">
             <div class="col-xs-6 col-sm-3">
                 <a class="glyphicon glyphicon-cog-color"
+                   ng-click="model.createWidget(model.pageId, model.widget)"
                    href="widget-IMAGE.view.client.html">Image</a>
             </div>
             <div class="col-xs-3"></div>
@@ -74,6 +76,7 @@
         <div class="row">
             <div class="col-xs-6 col-sm-3">
                 <a class="glyphicon glyphicon-cog-color"
+                   ng-click="model.createWidget(model.pageId, model.widget)"
                    href="widget-YOUTUBE.view.client.html">Youtube</a>
             </div>
             <div class="col-xs-3"></div>
