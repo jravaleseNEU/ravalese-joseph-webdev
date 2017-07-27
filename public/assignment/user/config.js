@@ -4,13 +4,18 @@
         .module("WamApp")
         .config(configuration);
 
-    function configuration($routeProvider) {
-        $routeProvider
-             .when("/", {
-                 templateUrl: "user/templates/login.view.client.html",
-                 controller: "loginController",
-                 controllerAs: "model"
-             })
+    function configuration($routeProvider, $httpProvider {
+        $routeProvider;
+
+        $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+        $httpProvider.defaults.headers.post['Accept'] = 'application/json, text/javascript';
+        $httpProvider.defaults.headers.post['Access-Control-Max-Age'] = '1728000'
+
+            .when("/", {
+                templateUrl: "user/templates/login.view.client.html",
+                controller: "loginController",
+                controllerAs: "model"
+            })
             .when("/login", {
                 templateUrl: "user/templates/login.view.client.html",
                 controller: "loginController",
@@ -88,7 +93,6 @@
                 controller: "widgetEditController",
                 controllerAs: "model"
             })
-
 
 
     }
