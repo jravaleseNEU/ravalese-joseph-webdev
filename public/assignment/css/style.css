@@ -19,6 +19,10 @@ a {
     color: #fff;
 }
 
+.link {
+    color: #000
+}
+
 a.glyphicon-plus-color {
     color: #fff;
 }
@@ -27,9 +31,9 @@ a.glyphicon-cog-color {
     color:#0f0f0f;
 }
 
-.navbar-default {
-    background-color: #46b8da;
-    border-color: #e7e7e7;
+.navbar {
+    background-color: #2b669a;
+    border-color: #2b669a;
 }
 
 .navbar-default .navbar-brand {
@@ -38,6 +42,22 @@ a.glyphicon-cog-color {
 
 .navbar-default .navbar-nav>li>a {
     color: #fff;
+}
+
+.glyphicon-user {
+    color: #fff;
+}
+
+.glyphicon-chevron-left {
+    color: #fff;
+}
+
+.glyphicon-ok {
+    color: #fff;
+}
+
+.glyphicon-cog {
+    color: #000000;
 }
 
 .jr-split-view-right {
