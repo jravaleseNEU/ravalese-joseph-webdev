@@ -1,35 +1,23 @@
+
+
+
+
 (function () {
     angular
         .module("WamApp")
         .controller("widgetListController", widgetListController);
 
-    function widgetListController($routeParams, pageService) {
+    function widgetListController($sce, $routeParams) {
         var model = this;
+        model.trustHtmlContent = trustHtmlContent;
+        model.trustUrlResource = trustUrlResource;
+        model.getWidgetIncludeUrl = getWidgetIncludeUrl;
 
         model.userId = $routeParams.userId;
         model.websiteId = $routeParams.wid;
         model.pageId = $routeParams.pid;
         model.widgetId = $routeParams.wgid;
 
-
-
-        function init() {
-            model.widgets = widgetService.findWidgetsByPageId(model.widgetId);
-        }
-        init();
-    }
-})();
-
-(function () {
-    angular
-        .module("WamApp")
-        .controller("widgetListController", widgetListController);
-
-    function widgetListController($sce) {
-        var model = this;
-        model.trustHtmlContent = trustHtmlContent;
-        model.trustUrlResource = trustUrlResource;
-        model.getWidgetIncludeUrl = getWidgetIncludeUrl;
         function init() {
             model.hello = "Hello from widgetListController";
             model.widgets = [
