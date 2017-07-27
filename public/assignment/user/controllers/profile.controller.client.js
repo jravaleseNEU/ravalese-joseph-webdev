@@ -2,17 +2,20 @@
 
     angular
         .module("WamApp")
-        .controller("profileController", profileController);
+        .controller("profileController", profileController)
 
     function profileController($routeParams, userService) {
         var model = this;
-        model.userId = $routeParams.userId;
+        var userId = $routeParams["userId"];
 
         model.updateUser = updateUser;
         model.unregister = unregister;
 
         function init() {
-            model.user = userService.findUserById(model.userId);
+            userService.findUserById(userId)
+                .then(function (response) {
+                    model.user = response.data;
+                });
         }
         init();
 
@@ -21,7 +24,6 @@
         }
 
         function unregister() {
-            userService.deleteUser(user)
 
         }
     }
