@@ -1,16 +1,14 @@
-/**
- * Created by ravalese on 7/17/17.
- */
-
 (function () {
 
     angular
         .module("WamApp")
         .controller("loginController", loginController);
 
-    function loginController($location, userService) {
+    function loginController($location, userService, $rootScope) {
         var model = this;
+
         model.login = login;
+
         function init() {
 
         }
@@ -21,16 +19,17 @@
                 model.errorMessage = "User not found";
                 return;
             }
-
-            var user = userService.findUserByUsernameAndPassword(user.username, user.password);
-            if(user === null) {
-                model.errorMessage = "User not found";
-            }
-            else {
-                $location.url("profile/" + user._id)
-            }
-
-
+            var promise = userService.findUserByUsernameAndPassword(user.username, user.password);
+            promise
+                .then(function (response) {
+                    user = response.data;
+                    if(user === null) {
+                        model.errorMessage = "User not found";
+                    } else {
+                        $rootScope.currentUser = user;
+                        $location.url("profile/"+user._id);
+                    }
+                });
         }
     }
 })();

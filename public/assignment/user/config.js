@@ -4,7 +4,7 @@
         .module("WamApp")
         .config(configuration);
 
-    function configuration($routeProvider, $httpProvider {
+    function configuration($routeProvider, $httpProvider) {
         $routeProvider;
 
         $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
