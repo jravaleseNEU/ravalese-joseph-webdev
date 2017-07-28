@@ -3,27 +3,28 @@
         .module("WamApp")
         .controller("websiteNewController", websiteNewController);
 
-    function websiteNewController($routeParams, websiteService) {
+    function websiteNewController($location, $routeParams, websiteService) {
         var model = this;
 
-        model.userId = $routeParams.userId;
-        model.websiteId = $routeParams.wid;
         model.createWebsite = createWebsite;
 
-        function init() {
-            model.websites = websiteService.findWebsitesByUser(model.userId);
 
+        model.userId = $routeParams.userId;
+
+        function init() {
+            websiteService.findWebsitesByUser(model.userId)
+                .then(function (websites) {
+                    model.websites = websites;
+                });
         }
         init();
 
-        function createWebsite(websiteId,website) {
-            var _website = websiteService.findWebsiteById(model.websiteId);
-            if(!_website) {
-                var website = websiteService.createWebsite(websiteId,website);
-                $location.url("/user/:userId/website/"+website._id);
-            } else {
-                model.error = "website already exists";
-            }
+        function createWebsite(website) {
+            websiteService
+                .createWebsite(model.userId, website)
+                .then(function () {
+                    $location.url("/user/"+model.userId+"/website");
+                });
         }
     }
 })();

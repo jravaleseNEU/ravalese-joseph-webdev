@@ -86,12 +86,14 @@
         <div class="col-lg-9 col-xs-12 jr-split-view-right"> <!--right side-->
             <label for="websitename">Name</label>
             <input name="websitename"
+                   ng-model="website.name"
                    placeholder="Name"
                    class="form-control"
                    id="websitename"/>
 
             <label for="description">Description</label>
             <textarea name="description"
+                      ng-model="website.description"
                       rows="5"
                       placeholder="Description"
                       class="form-control"
@@ -99,7 +101,7 @@
 
 
             <a class="btn btn-default btn-primary btn-block"
-               ng-click="model.createWebsite(model.userId, model.website)"
+               ng-click="model.createWebsite(website)"
                href="#!/user/{{model.userId}}/website/"
                role="button">Create</a>
 
