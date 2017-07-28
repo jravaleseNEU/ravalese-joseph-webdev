@@ -1,2 +1,9 @@
-require("./user.service.server");
-require("./website.service.server");
+/**
+ * Created by ravalese on 7/17/17.
+ */
+
+(function () {
+
+    angular.module("WamApp", ["ngRoute"]);
+
+})();
