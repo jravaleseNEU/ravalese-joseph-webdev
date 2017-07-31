@@ -1,8 +1,13 @@
 var app = require("../express");
 
+// http handlers
 app.get ("/api/user/:userId/website", findWebsitesByUser);
 app.get ("/api/user/:userId/website/:websiteId", findWebsiteById);
+app.put ("/api/user/:userId/website/:websiteId", updateWebsite);
 app.post("/api/user/:userId/website", createWebsite);
+app.delete("/api/user/:userId/website/:websiteId", deleteWebsite);
+
+
 
 var websites = [
     { "_id": "123", "name": "Facebook",    "developerId": "456", "description": "Lorem" },
@@ -44,4 +49,34 @@ function findWebsitesByUser(req, res) {
     }
 
     res.json(sites);
+}
+
+
+function updateWebsite(req,res) {
+    var websiteId = req.params.websiteId;
+    var website = req.body;
+
+    for (var u in websites) {
+        if (websites[u]._id === websiteId) {
+            websites[u] = website;
+            res.send(website)
+            return;
+        }
+    }
+    res.sendStatus(404);
+
+}
+
+function deleteWebsite(req, res) {
+    var websiteId = req.params.websiteId;
+    var website = req.body;
+
+    for(var u in websites) {
+        var _website = websites[u];
+        if(_website._id === websiteId) {
+            websites.pop(websites[u]);
+        }
+    }
+    return null;
+
 }

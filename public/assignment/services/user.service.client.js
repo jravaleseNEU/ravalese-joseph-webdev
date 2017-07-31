@@ -51,5 +51,13 @@
 
         }
 
+        //WORK ON THIS
+        function deleteUser(userId,user) {
+
+            var url = "/api/user/" + userId;
+            return $http.delete(url,user)
+
+        }
+
     }
 })();

@@ -3,6 +3,8 @@ var app = require("../express");
 app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget", findPagesByUser);
 app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", findPageById);
 app.post("/api/user/:userId/website/:websiteId/page/:pageId/widget", createPage);
+app.put("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", updateWidget);
+app.delete("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", deleteWidget);
 
 model.widgets = [
     { "_id": "123", "widgetType": "HEADING", "pageId": "321", "size": 2, "text": "GIZMODO"},
@@ -48,4 +50,36 @@ function findWidgetsByUser(req, res) {
     }
 
     res.json(widgetlist);
+}
+
+
+function updateWidget(req, res) {
+
+    var widgetId = req.params.widgetId;
+    var widget = req.body;
+
+    for (var u in widgets) {
+        if (widgets[u]._id === widgetId) {
+            widgets[u] = widget;
+            res.send(widget)
+            return;
+        }
+    }
+    res.sendStatus(404);
+
+}
+
+function deleteWidget(req, res) {
+
+    var widgetId = req.params.widgetId;
+    var widget = req.body;
+
+    for(var u in widgets) {
+        var _widget = widgets[u];
+        if(_widget._id === widgetId) {
+            widgets.pop(widgets[u]);
+        }
+    }
+    return null;
+
 }

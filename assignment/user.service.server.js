@@ -13,6 +13,7 @@ app.get("/api/user/:userId", getUserById);
 app.get("/api/user", findUser);
 app.post("/api/user", registerUser);
 app.put("/api/user/:userId", updateUser);
+app.delete("/api/user/:userId", deleteUser)
 
 function updateUser(req, res) {
     var userId = req.params.userId;
@@ -69,4 +70,9 @@ function getUserById(req, response) {
             response.send(users[u]);
         }
     }
+}
+
+
+function deleteUser() {
+
 }

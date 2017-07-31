@@ -58,14 +58,8 @@
 
 
 //WORK ON THIS
-        function deleteWebsite(websiteId) {
-            for(var u in websites) {
-                var _website = website[u];
-                if(_website._id === websiteId) {
-                    websites.pop(website[u]);
-                }
-            }
-            return null;
+        function deleteWebsite(websiteId, website) {
+
         }
 
     }
