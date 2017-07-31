@@ -27,13 +27,9 @@
 
 
         function updateWebsite(websiteId, website) {
-            for(var u in websites) {
-                if(websites[u]._id === websiteId) {
-                    website[u] = wesbsite;
-                    return;
-                }
-            }
-            return null;
+            var url = "/api/user/" + userId + "/website" + websiteId;
+
+            return $http.put(url, website);
         }
 
 //WORK ON THIS
