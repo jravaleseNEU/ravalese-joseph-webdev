@@ -1,8 +1,8 @@
 var app = require("../express");
 
-app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget", findPagesByUser);
-app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", findPageById);
-app.post("/api/user/:userId/website/:websiteId/page/:pageId/widget", createPage);
+app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget", findWidgetsByPage);
+app.get ("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", findWidgetById);
+app.post("/api/user/:userId/website/:websiteId/page/:pageId/widget", createWidget);
 app.put("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", updateWidget);
 app.delete("/api/user/:userId/website/:websiteId/page/:pageId/widget/:widgetId", deleteWidget);
 
@@ -38,7 +38,7 @@ function findWidgetById(req, res) {
     res.sendStatus(404);
 }
 
-function findWidgetsByUser(req, res) {
+function findWidgetsByPage(req, res) {
     var userId = req.params.userId;
 
     var widgetlist = [];

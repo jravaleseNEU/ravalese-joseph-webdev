@@ -55,6 +55,8 @@
 
 //WORK ON THIS
         function deleteWebsite(websiteId, website) {
+            var url = "/api/user/" + userId + "/website/" + websiteId;
+            return $http.delete(url,website);
 
         }
 

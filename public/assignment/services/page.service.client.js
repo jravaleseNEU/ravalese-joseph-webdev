@@ -27,42 +27,26 @@
         }
 //WORK ON THIS
         function createPage(websiteId, page) {
-            page._id = (new Date()).getTime() + "";
-            page.websiteId = websiteId;
-            pages.push(page);
-            return page;
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/";
+
+            return $http.post(url, page);
         }
 
         function findPagesByWebsiteId(websiteId) {
-            var pagelist= [];
 
-            for(var u in pages) {
-                if(pages[u].websiteId === websiteId) {
-                    pagelist.push(pages[u]);
-                }
-            }
-            return pagelist;
+            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/");
         }
 
         function findPageById(pageId) {
-            for(var u in pages) {
-                if(pages[u]._id === pageId) {
-                    return pages[u];
-                }
-            }
-            return null;
+            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId);
         }
 
 
 //WORK ON THIS
-        function deletePage(pageId) {
-            for(var u in pages) {
-                var _page = page[u];
-                if(_page._id === websiteId) {
-                    pages.pop(page);
-                }
-            }
-            return null;
+        function deletePage(pageId,page) {
+
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId;
+            return $http.delete(url,page);
         }
 
     }

@@ -18,7 +18,7 @@
         ];
 
         var api = {
-            "findWidgetByPageId": findWidgetByPageId,
+            "findWidgetsByPage": findWidgetsByPage,
             "findWidgetById": findWidgetById,
             "updateWidget": updateWidget,
             "deleteWidget": deleteWidget,
@@ -34,39 +34,27 @@
         }
 //WORK ON THIS
         function createWidget(pageId, widget) {
-            widget._id = (new Date()).getTime() + "";
-            widget.pageId = pageId;
-            widgets.push(widget);
-            return widget;
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+
+            return $http.post(url, page);
         }
 
-        function findWidgetByPageId(pageId) {
-            for(var u in widgets) {
-                if(widgets[u].pageId === pageId) {
-                    return widgets[u];
-                }
-            }
-            return null;
+        function findWidgetsByPage(pageId) {
+
+            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/");
         }
+
         function findWidgetById(widgetId) {
-            for(var u in widgets) {
-                if(widgets[u]._id === widgetId) {
-                    return widgets[u];
-                }
-            }
-            return null;
+
+            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId);
         }
 
 
 //WORK ON THIS
-        function deleteWidget(widgetId) {
-            for(var u in widgets) {
-                var _widget = widget[u];
-                if(_widget._id === widgetId) {
-                    widgets.pop(widget);
-                }
-            }
-            return null;
+        function deleteWidget(widgetId,widget) {
+
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+            return $http.delete(url, widget);
         }
 
     }
