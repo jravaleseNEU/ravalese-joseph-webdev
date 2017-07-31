@@ -21,13 +21,9 @@
         return api;
 
         function updatePage(websiteId, page) {
-            for(var u in pages) {
-                if(pages[u].websiteId === websiteId) {
-                    page[u] = page;
-                    return;
-                }
-            }
-            return null;
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId;
+
+            return $http.put(url, website);
         }
 //WORK ON THIS
         function createPage(websiteId, page) {

@@ -27,13 +27,10 @@
         return api;
 
         function updateWidget(widgetId, widget) {
-            for(var u in widgets) {
-                if(widgets[u]._id === widgetId) {
-                    widget[u] = widget;
-                    return;
-                }
-            }
-            return null;
+
+            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+
+            return $http.put(url, website);
         }
 //WORK ON THIS
         function createWidget(pageId, widget) {
