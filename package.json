@@ -6,6 +6,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jqueryui": "^1.11.1",
     "mongoose": "^4.11.1",
     "q": "^1.5.0"
   },
