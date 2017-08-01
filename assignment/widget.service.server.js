@@ -77,7 +77,7 @@ function deleteWidget(req, res) {
     for(var u in widgets) {
         var _widget = widgets[u];
         if(_widget._id === widgetId) {
-            widgets.pop(widgets[u]);
+            widgets.splice(u,1);
         }
     }
     return null;

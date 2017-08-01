@@ -73,6 +73,15 @@ function getUserById(req, response) {
 }
 
 
-function deleteUser() {
+function deleteUser(req,res) {
+    var userId = req.params.userId;
+
+    for(var u in users) {
+        var _user = users[u];
+        if (_user._id === userId) {
+            users.splice(u, 1);
+            res.sendStatus(200);
+        }
+    }
 
 }

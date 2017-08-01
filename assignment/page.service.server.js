@@ -71,7 +71,7 @@ function deletePage(req, res) {
     for(var u in pages) {
         var _page = pages[u];
         if(_page._id === pageId) {
-            pages.pop(pages[u]);
+            pages.splice(u,1);
         }
     }
     return null;

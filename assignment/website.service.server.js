@@ -74,7 +74,7 @@ function deleteWebsite(req, res) {
     for(var u in websites) {
         var _website = websites[u];
         if(_website._id === websiteId) {
-            websites.pop(websites[u]);
+            websites.splice(u,1);
         }
     }
     return null;

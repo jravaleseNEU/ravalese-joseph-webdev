@@ -3,7 +3,7 @@
         .module("WamApp")
         .controller("websiteEditController", websiteEditController);
 
-    function websiteEditController($routeParams, websiteService) {
+    function websiteEditController($location, $routeParams, websiteService) {
         var model = this;
 
         model.userId = $routeParams.userId;
