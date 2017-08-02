@@ -1,11 +1,12 @@
 var app = require("../express");
 
 // http handlers
-app.get ("/api/user/:userId/website/:websiteId/page", findPagesByUser);
-app.get ("/api/user/:userId/website/:websiteId/page/:pageId", findPageById);
-app.post("/api/user/:userId/website/:websiteId/page", createPage);
-app.put ("/api/user/:userId/website/:websiteId/page/:pageId", updatePage);
-app.delete("/api/user/:userId/website/:websiteId/page/:pageId", deletePage);
+
+app.get   ("/api/website/:websiteId/page", findPagesByWebsiteId);
+app.get   ("/api/page/:pageId", findPageById);
+app.post  ("/api/website/:websiteId/page",createPage);
+app.put   ("/api/page/:pageId", updatePage);
+app.delete("/api/page/:pageId", deletePage);
 
 var pages = [
     { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
@@ -32,8 +33,9 @@ function findPageById(req, res) {
     res.sendStatus(404);
 }
 
-function findPagesByUser(req, res) {
+function findPagesByWebsiteId(req, res) {
     var userId = req.params.userId;
+    var websiteId = req.params.websiteId;
 
     var pagelist = [];
 

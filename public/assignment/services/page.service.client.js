@@ -3,7 +3,7 @@
         .module("WamApp")
         .service("pageService", pageService);
 
-    function pageService() {
+    function pageService($http) {
 
         var pages = [
             { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },

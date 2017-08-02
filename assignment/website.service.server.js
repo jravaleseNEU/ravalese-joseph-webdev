@@ -1,11 +1,12 @@
 var app = require("../express");
 
 // http handlers
-app.get ("/api/user/:userId/website", findWebsitesByUser);
-app.get ("/api/user/:userId/website/:websiteId", findWebsiteById);
-app.put ("/api/user/:userId/website/:websiteId", updateWebsite);
-app.post("/api/user/:userId/website", createWebsite);
-app.delete("/api/user/:userId/website/:websiteId", deleteWebsite);
+
+app.get   ("/api/user/:userId/website", findWebsitesByUser);
+app.get   ("/api/user/:userId/website/:websiteId", findWebsiteById);
+app.post  ("/api/user/:userId/website", createWebsite);
+app.put   ("/api/website/:websiteId", updateWebsite);
+app.delete("/api/website/:websiteId", deleteWebsite);
 
 
 
@@ -60,7 +61,6 @@ function updateWebsite(req,res) {
         if (websites[u]._id === websiteId) {
             websites[u] = website;
             res.send(website)
-            return;
         }
     }
     res.sendStatus(404);
@@ -69,14 +69,14 @@ function updateWebsite(req,res) {
 
 function deleteWebsite(req, res) {
     var websiteId = req.params.websiteId;
-    var website = req.body;
+    //var website = req.body;
 
     for(var u in websites) {
         var _website = websites[u];
         if(_website._id === websiteId) {
             websites.splice(u,1);
+            res.sendStatus(200);
         }
     }
-    return null;
 
 }

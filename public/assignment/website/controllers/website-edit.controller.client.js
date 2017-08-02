@@ -7,7 +7,7 @@
         var model = this;
 
         model.userId = $routeParams.userId;
-        model.websiteId = $routeParams.wid;
+        model.websiteId = $routeParams.websiteId;
         model.updateWebsite = updateWebsite;
         model.deleteWebsite = deleteWebsite;
 
@@ -19,9 +19,9 @@
                 });
 
             websiteService
-                .findWebsiteById(model.websiteId)
+                .findWebsiteById(model.userId, model.websiteId)
                 .then(function (response) {
-                    model.site = response.data;
+                    model.website = response.data;
                 });
         }
 

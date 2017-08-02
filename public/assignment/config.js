@@ -50,7 +50,7 @@
                 controller: "websiteNewController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid", {
+            .when("/user/:userId/website/:websiteId", {
                 templateUrl: "website/templates/website-edit.view.client.html",
                 controller: "websiteEditController",
                 controllerAs: "model"
@@ -60,17 +60,17 @@
             //Page Routes
 
 
-            .when("/user/:userId/website/:wid/page", {
+            .when("/user/:userId/website/:websiteId/page", {
                 templateUrl: "page/templates/page-list.view.client.html",
                 controller: "pageListController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/new", {
+            .when("/user/:userId/website/:websiteId/page/new", {
                 templateUrl: "page/templates/page-new.view.client.html",
                 controller: "pageNewController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/:pid", {
+            .when("/user/:userId/website/:websiteId/page/:pageId", {
                 templateUrl: "page/templates/page-edit.view.client.html",
                 controller: "pageEditController",
                 controllerAs: "model"
@@ -79,17 +79,17 @@
             //Widget Routes
 
 
-            .when("/user/:userId/website/:wid/page/:pid/widget", {
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget", {
                 templateUrl: "widget/templates/widget-list.view.client.html",
                 controller: "widgetListController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/:pid/widget/new", {
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new", {
                 templateUrl: "widget/templates/widget-choose.view.client.html",
                 controller: "widgetNewController",
                 controllerAs: "model"
             })
-            .when("/user/:userId/website/:wid/page/:pid/widget/new/:wgid", {
+            .when("/user/:userId/website/:websiteId/page/:pageId/widget/new/:widgetId", {
                 templateUrl: "widget/templates/widget-edit.view.client.html",
                 controller: "widgetEditController",
                 controllerAs: "model"
