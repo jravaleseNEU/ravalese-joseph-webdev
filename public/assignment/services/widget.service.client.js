@@ -28,13 +28,13 @@
 
         function updateWidget(widgetId, widget) {
 
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+            var url = "/api/widget/" + widgetId;
 
             return $http.put(url, website);
         }
 //WORK ON THIS
         function createWidget(pageId, widget) {
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+            var url = "/api/page/" + pageId + "/widget";
 
             return $http.post(url, page);
         }
@@ -46,7 +46,7 @@
 
         function findWidgetById(widgetId) {
 
-            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId);
+            return $http.get("/api/widget/" + widgetId);
         }
 
 
