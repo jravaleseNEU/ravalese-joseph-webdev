@@ -4,11 +4,15 @@
         .controller("pageEditController", pageEditController);
 
     function pageEditController($location, $routeParams, pageService) {
+
         var model = this;
 
         model.userId = $routeParams.userId;
         model.websiteId = $routeParams.wid;
         model.pageId = $routeParams.pid;
+
+        model.updatePage = updatePage;
+        model.deletePage = deletePage;
 
 
         function init() {
@@ -33,9 +37,9 @@
                 });
         }
 
-        function updatePage(pageId,page) {
+        function updatePage(page) {
             pageService
-                .updatePage(model.websiteId, page)
+                .updatePage(model.pageId, page)
                 .then(function () {
                     $location.url("/user/" + model.userId + "/" + model.websiteId + "/page");
                 });

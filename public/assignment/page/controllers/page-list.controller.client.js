@@ -4,6 +4,7 @@
         .controller("pageListController", pageListController);
 
     function pageListController($routeParams, pageService) {
+
         var model = this;
 
         model.userId = $routeParams.userId;
@@ -20,4 +21,5 @@
 
         init();
     }
+
 })();
