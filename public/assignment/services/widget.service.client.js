@@ -41,7 +41,7 @@
 
         function findWidgetsByPage(pageId) {
 
-            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/");
+            return $http.get("/api/page/" + pageId + "/widget");
         }
 
         function findWidgetById(widgetId) {
@@ -53,7 +53,7 @@
 //WORK ON THIS
         function deleteWidget(widgetId,widget) {
 
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId + "/widget/" + widgetId;
+            var url = "/api/widget/" + widgetId;
             return $http.delete(url, widget);
         }
 

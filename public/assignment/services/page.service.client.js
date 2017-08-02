@@ -21,31 +21,31 @@
         return api;
 
         function updatePage(websiteId, page) {
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId;
+            var url = "/api/page/" + pageId;
 
             return $http.put(url, website);
         }
 //WORK ON THIS
         function createPage(websiteId, page) {
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/";
+            var url = "/api/website/" + websiteId + "/page";
 
             return $http.post(url, page);
         }
 
         function findPagesByWebsiteId(websiteId) {
 
-            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/");
+            return $http.get("/api/website/" + websiteId + "/page");
         }
 
         function findPageById(pageId) {
-            return $http.get("/api/user/" + userId + "/website" + websiteId + "/page/" + pageId);
+            return $http.get("/api/page/" + pageId);
         }
 
 
 //WORK ON THIS
         function deletePage(pageId,page) {
 
-            var url = "/api/user/" + userId + "/website" + websiteId + "/page/" + pageId;
+            var url = "/api/page/" + pageId;
             return $http.delete(url,page);
         }
 

@@ -87,12 +87,14 @@
             <label for="websitename">Website Name</label>
             <input name="websitename"
                    ng-model="model.website.name"
+                   value={{model.site.name}}
                    class="form-control"
                    id="websitename"/>
 
             <label for="description">Description</label>
             <textarea name="description"
                       ng-model="model.website.description"
+                      value={{model.site.description}}
                       rows="5"
                       class="form-control"
                       id="description"></textarea>
