@@ -1,11 +1,12 @@
-//var app = require("../../express");
-module.exports = function (app) {
+var app = require("../../express");
+
 
     app.get("/api/page/:pageId/widget", findWidgetsByPage);
     app.get("/api/widget/:widgetId", findWidgetById);
     app.post("/api/page/:pageId/widget", createWidget);
     app.put("/api/widget/:widgetId", updateWidget);
     app.delete("/api/widget/:widgetId", deleteWidget);
+    app.put("/api/page/:pageId/widget", updateWidgetList);
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({dest: './public/assignment/uploads'});
@@ -133,5 +134,25 @@ module.exports = function (app) {
 
         res.redirect(callbackUrl);
     }
+
+    function updateWidgetList(req, res) {
+        var pageId = req.params.pageId;
+        var startIndex = parseInt(req.query.initial);
+        var endIndex = parseInt(req.query.final);
+
+        var widgetsList = [];
+
+        for (var u in widgets) {
+            if (widgets[u].pageId = pageId) {
+                widgetsforPage.push(widgets[u]);
+            }
+        }
+        var firstWidget = widgetsList[startIndex];
+        var lastWidget = widgetsList[endIndex];
+
+        widgets.splice(widgets.indexOf(firstWidget), 0, widgets.splice(widgets.indexOf(lastWidget), 1)[0]);
+        res.sendStatus(200);
+
+
 }
 
