@@ -1,7 +1,7 @@
 (function () {
     angular
         .module("WamApp")
-        .factory("widgetService", widgetService);
+        .service("widgetService", widgetService);
 
     function widgetService($http) {
 
@@ -49,7 +49,7 @@
 
         function findWidgetsByPage(pageId) {
 
-            var url = "/api/page/" + id + "/widget";
+            var url = "/api/page/" + pageId + "/widget";
 
             return $http.get(url)
                 .then(function (response) {
@@ -59,7 +59,7 @@
 
         function findWidgetById(widgetId) {
 
-            var url = "/api/widget/" + id;
+            var url = "/api/widget/" + widgetId;
 
             return $http.get(url);
         }

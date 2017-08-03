@@ -8,7 +8,7 @@
         var model = this;
 
         model.userId = $routeParams.userId;
-        model.websiteId = $routeParams.wid;
+        model.websiteId = $routeParams.websiteId;
 
 
         function init() {
