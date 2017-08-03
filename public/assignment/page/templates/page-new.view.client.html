@@ -23,7 +23,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="glyphicon-cog-color"
-                       ng-click="model.createPage(model.websiteId,model.page)"
+                       ng-click="model.createPage(page)"
                        href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
@@ -52,11 +52,13 @@
     <label for="name">Name</label>
     <input name="name"
            placeholder="Blog Post"
+           ng-model="page.name"
            class="form-control"
            id="name"/>
 
-    <label for="title">Title</label>
+    <label for="title">Description</label>
     <input name="title"
+           ng-model="page.description"
            placeholder="Page Name"
            class="form-control"
            id="title"/>
