@@ -22,7 +22,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="glyphicon-cog-color"
-                       ng-click="model.updatePage(websiteId,page)"
+                       ng-click="model.updatePage(model.page)"
                        href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page">
                     <span class="glyphicon glyphicon-ok pull-right"> </span>
                 </a>
@@ -61,7 +61,7 @@
 
 
     <a class="btn btn-default btn-danger btn-block"
-       ng-click="model.page.deletePage(model.page._id)"
+       ng-click="model.deletePage(model.pageId)"
        href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page"
        role="button">Delete</a>
 

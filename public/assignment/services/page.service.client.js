@@ -34,7 +34,7 @@
             return $http.post(url, page);
         }
 
-        function updatePage(websiteId, page) {
+        function updatePage(pageId, page) {
             var url = "/api/page/" + pageId;
 
             return $http.put(url, page);
