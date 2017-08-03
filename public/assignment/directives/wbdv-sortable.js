@@ -2,7 +2,6 @@
     angular
         .module("myDirectives", [])
         .directive("itemList", itemListDirective)
-        .directive("hello", helloDirective);
 
     function itemListDirective($http) {
         function linkFunction(scope, element) {
@@ -27,9 +26,4 @@
         }
     }
 
-    function helloDirective() {
-        return {
-            templateUrl: "helloWorld.html"
-        };
-    }
 })();
