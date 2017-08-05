@@ -65,23 +65,31 @@ function getAllUsers(req, response) {
 }
 
 function getUserById(req, response) {
-    for (var u in users) {
-        if (users[u]._id === req.params.userId) {
-            response.send(users[u]);
-        }
-    }
+    userModel
+        .findUserById(req.params.userId)
+        .then(function(user) {
+            response.json(user);
+        })
+
+    // for (var u in users) {
+    //     if (users[u]._id === req.params.userId) {
+    //         response.send(users[u]);
+    //     }
+    // }
 }
 
 
 function deleteUser(req,res) {
-    var userId = req.params.userId;
 
-    for(var u in users) {
-        var _user = users[u];
-        if (_user._id === userId) {
-            users.splice(u, 1);
-            res.sendStatus(200);
-        }
-    }
+
+    // var userId = req.params.userId;
+    //
+    // for(var u in users) {
+    //     var _user = users[u];
+    //     if (_user._id === userId) {
+    //         users.splice(u, 1);
+    //         res.sendStatus(200);
+    //     }
+    // }
 
 }
