@@ -13,21 +13,29 @@ app.get("/api/user/:userId", getUserById);
 app.get("/api/user", findUser);
 app.post("/api/user", registerUser);
 app.put("/api/user/:userId", updateUser);
-app.delete("/api/user/:userId", deleteUser)
+app.delete("/api/user/:userId", deleteUser);
 
 function updateUser(req, res) {
     var userId = req.params.userId;
     var user = req.body;
 
-    for (var u in users) {
-        if (users[u]._id === userId) {
-            users[u] = user;
-            res.send(user)
-            return;
-        }
-    }
-    res.sendStatus(404);
+    userModel
+        .updateUser(userId, user)
+        .then(function (status) {
+            res.json(status);
+        }, function (err) {
+            res.sendStatus(404).send(err);
+        });
 }
+//     for (var u in users) {
+//         if (users[u]._id === userId) {
+//             users[u] = user;
+//             res.send(user)
+//             return;
+//         }
+//     }
+//     res.sendStatus(404);
+// }
 
 function registerUser(req, res) {
     var user = req.body;
@@ -42,13 +50,26 @@ function findUser(req, res) {
 
 
     if (username && password) {
-        for (var u in users) {
-            var _user = users[u];
-            if (_user.username === username && _user.password === password) {
-                res.send(_user);
+
+        userModel
+            .findUserByCredentials(username, password)
+            .then(function (user) {
+                res.json(user)
                 return;
-            }
-        }
+            }, function (err) {
+                res.sendStatus(404).send(err);
+                return;
+            });
+
+
+        //     for (var u in users) {
+        //         var _user = users[u];
+        //         if (_user.username === username && _user.password === password) {
+        //             res.send(_user);
+        //             return;
+        //         }
+        //     }
+        return;
     } else if (username) {
         for (var u in users) {
             if (users[u].username === username) {
@@ -67,7 +88,7 @@ function getAllUsers(req, response) {
 function getUserById(req, response) {
     userModel
         .findUserById(req.params.userId)
-        .then(function(user) {
+        .then(function (user) {
             response.json(user);
         })
 
@@ -78,9 +99,13 @@ function getUserById(req, response) {
     // }
 }
 
+//NOT FINISHED
+function deleteUser(req, res) {
+    userModel
+        .deleteUser(req.params.userId)
+        .then(function (user) {
 
-function deleteUser(req,res) {
-
+        })
 
     // var userId = req.params.userId;
     //

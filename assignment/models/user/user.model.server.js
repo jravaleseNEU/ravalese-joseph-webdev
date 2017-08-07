@@ -6,7 +6,7 @@ userModel.createUser = createUser;
 userModel.findUserById = findUserById;
 userModel.updateUser = updateUser;
 userModel.findUserByCredentials = findUserByCredentials;
-usermodel.deleteUser = deleteUser;
+userModel.deleteUser = deleteUser;
 
 module.exports = userModel;
 
