@@ -47,16 +47,21 @@ function findWebsiteById(req, res) {
 
 function findWebsitesByUser(req, res) {
     var userId = req.params.userId;
+    websiteModel
+        .findAllWebsitesForUser(userId)
+        .then(function (websites) {
 
-    var sites = [];
+        })
 
-    for(var w in websites) {
-        if(websites[w].developerId === userId) {
-            sites.push(websites[w]);
-        }
-    }
-
-    res.json(sites);
+    // var sites = [];
+    //
+    // for(var w in websites) {
+    //     if(websites[w].developerId === userId) {
+    //         sites.push(websites[w]);
+    //     }
+    // }
+    //
+    // res.json(sites);
 }
 
 

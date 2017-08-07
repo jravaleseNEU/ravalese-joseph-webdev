@@ -30,5 +30,5 @@ function findWebsiteById(websiteId) {
 }
 // Not Finished
 function findAllWebsitesForUser(userId) {
-    return websiteModel.findById(userId)
+    return websiteModel.find({_user: userId});
 }
