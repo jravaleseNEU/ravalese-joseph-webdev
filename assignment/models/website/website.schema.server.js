@@ -1,13 +1,13 @@
 var mongoose = require("mongoose");
 var websiteSchema = mongoose.Schema({
 
-    _user: 'user._id',
+    _user: {type: mongoose.Schema.Types.ObjectId, ref:"UserModel"},
     name: String,
     descripiton: String,
     pages: [pages],
     dateCreated:{
-        type: date,
-        default: date.now()
+        type: Date,
+        default: Date.now()
     },
 
 }, {collection: "website"});

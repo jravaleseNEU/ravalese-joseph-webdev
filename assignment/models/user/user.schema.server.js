@@ -5,12 +5,13 @@ var userSchema = mongoose.Schema({
     password: String,
     firstName: String,
     lastName: String,
+    role: {type: String, enum: ["ADMIN", "STUDENT", "FACULTY"]},
     email: String,
     phone: String,
-    websites: [websites],
+    websites: [{type: mongoose.Schema.Types.ObjectId, ref:"WebsiteModel"}],
     dateCreated:{
-        type: date,
-        default: date.now()
+        type: Date,
+        default: Date.now()
     },
 
 }, {collection: "user"});
