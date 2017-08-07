@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 var websiteSchema = require("./website.schema.server");
 var db = require("./database");
 var websiteModel = mongoose.model("WebsiteModel", websiteSchema);
+
 websiteModel.createWebsiteForUser = createWebsiteForUser;
 websiteModel.updateWebsite = updateWebsite;
 websiteModel.deleteWebsite = deleteWebsite;
@@ -12,8 +13,17 @@ module.exports = websiteModel;
 
 function createWebsiteForUser(userId, website) {
     website._user = userId;
-    return websiteModel.create(website);
-}
+    var websiteTmp = null;
+    return websiteModel
+        .create(website)
+        .then(function (websiteDoc) {
+            websiteTmp = websiteDoc;
+           return userModel.addWebsite(userId,websiteDoc)
+        })
+        .then(function (userDoc) {
+            return websiteTmp
+        })
+    }
 
 function updateWebsite(websiteId, website) {
 

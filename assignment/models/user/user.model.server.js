@@ -30,3 +30,13 @@ function findUserById(userId) {
 function deleteUser(userId) {
     return userModel.delete({_id:userId});
 }
+
+function addWebsite(userId, websiteI) {
+   return userModel
+        .findById(userId)
+        .then(function (user) {
+            user.websites.push(websiteId);
+            return user.save();
+
+        });
+}
