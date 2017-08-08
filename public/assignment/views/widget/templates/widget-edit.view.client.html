@@ -1,0 +1,57 @@
+
+
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li><a class="glyphicon-cog-color" href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
+                    <span class="glyphicon glyphicon-chevron-left pull-left"> </span>
+                </a>
+            </ul>
+
+            <a class="navbar-brand" href="#">Widget Edit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="glyphicon-cog-color"
+                       ng-click="model.updateWidget(model.widget)"
+                       href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget">
+                    <span class="glyphicon glyphicon-ok pull-right"></span>
+                </a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--Footer-->
+<nav class="navbar navbar-fixed-bottom">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="glyphicon-cog-color" href="#!/profile/{{model.userId}}">
+                <span class="glyphicon glyphicon-user pull-right"> </span>
+            </a>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+<div class="container-fluid">
+    <ng-include ng-if="model.widget"
+                src="'views/widget/templates/widget-edit-' +model.widget.type + '.view.client.html'"></ng-include>
+    <div class="form-group">
+        <br/>
+        <a ng-click="model.removeWidget()" role="button"
+           class="btn btn-danger btn-block">Delete</a>
+    </div>
+</div>
