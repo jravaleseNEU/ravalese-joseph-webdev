@@ -47,8 +47,8 @@
         }
 
         //WORK ON THIS
-        function deleteWebsite(websiteId, website) {
-            var url = "/api/website/" + websiteId;
+        function deleteWebsite(websiteId, website, userId) {
+            var url = "/api/user/" +userId+ "/website/" + websiteId;
             return $http.delete(url, website);
 
         }

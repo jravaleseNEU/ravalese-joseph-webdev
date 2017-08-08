@@ -31,7 +31,7 @@ function deleteUser(userId) {
     return userModel.delete({_id:userId});
 }
 
-function addWebsite(userId, websiteI) {
+function addWebsite(userId, websiteId) {
    return userModel
         .findById(userId)
         .then(function (user) {
@@ -39,4 +39,14 @@ function addWebsite(userId, websiteI) {
             return user.save();
 
         });
+}
+
+function removeWebsite(userId, websiteId) {
+    return userModel
+        .findUserById(userId)
+        .then(function (user) {
+            var index = user.websites.indexOf(websiteId);
+            user.websites.splice(index,1);
+            return user.save();
+        })
 }

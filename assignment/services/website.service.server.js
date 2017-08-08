@@ -9,7 +9,7 @@ app.get   ("/api/user/:userId/website", findWebsitesByUser);
 app.get   ("/api/user/:userId/website/:websiteId", findWebsiteById);
 app.post  ("/api/user/:userId/website", createWebsite);
 app.put   ("/api/website/:websiteId", updateWebsite);
-app.delete("/api/website/:websiteId", deleteWebsite);
+app.delete("/api/user/:userId/website/:websiteId", deleteWebsite);
 
 
 
