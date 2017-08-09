@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 var websiteSchema = require("./website.schema.server");
-var db = require("./database");
+var db = require("../model.server");
 var websiteModel = mongoose.model("WebsiteModel", websiteSchema);
+var userModel = require("../user/user.model.server");
 
 websiteModel.createWebsiteForUser = createWebsiteForUser;
 websiteModel.updateWebsite = updateWebsite;

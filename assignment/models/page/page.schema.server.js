@@ -1,14 +1,14 @@
 var mongoose = require("mongoose");
 var pageSchema = mongoose.Schema({
 
-    _website: 'website._id',
+    _website: {type: mongoose.Schema.ObjectId, ref: "WebsiteModel"},
     name: String,
     title: String,
     description: String,
-    widgets: [widgets],
+    widgets: [{type: mongoose.Schema.Types.ObjectId, ref: "WidgetModel"}],
     dateCreated:{
-        type: date,
-        default: date.now()
+        type: Date,
+        default: Date.now()
     },
 
 }, {collection: "page"});

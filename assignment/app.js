@@ -1,4 +1,5 @@
-var db = require("models/database.js")
+var db = require("./models/model.server.js");
+//var db = require("models/database.js")
 require("./services/user.service.server");
 require("./services/website.service.server");
 require("./services/page.service.server");

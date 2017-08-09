@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 var widgetSchema = mongoose.Schema({
 
-    _page: 'page._id',
+    _page: {required: true, type: mongoose.Schema.ObjectId, ref: "PageModel"},
     type: {
         type: String,
         enum: ['HEADING', 'IMAGE', 'YOUTUBE', 'HTML', 'INPUT']
@@ -20,8 +20,8 @@ var widgetSchema = mongoose.Schema({
     deletable: Boolean,
     formatted: Boolean,
     dateCreated:{
-        type: date,
-        default: date.now()
+        type: Date,
+        default: Date.now()
     },
 
 
