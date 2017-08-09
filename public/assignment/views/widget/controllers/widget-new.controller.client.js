@@ -12,7 +12,7 @@
         model.pageId = $routeParams.pageId;
         model.widgetId = $routeParams.widgetId;
 
-        model.createWidget
+        model.createWidget = createWidget;
 
 
         function init() {

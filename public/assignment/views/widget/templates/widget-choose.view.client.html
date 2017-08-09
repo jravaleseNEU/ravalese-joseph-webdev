@@ -43,48 +43,93 @@
 </nav>
 
 
-<div class="container-fluid">
-
-    <li class="list-group-item">
-        <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <a class="glyphicon glyphicon-cog-color"
-                   ng-click="model.createWidget(model.pageId, model.widget)"
-                   href="w#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/header">Heading</a>
-            </div>
-            <div class="col-xs-3"></div>
-            <div class="col-sm-3 hidden-xs"></div>
-            <div class="col-xs-3">
-            </div>
-        </div>
-    </li>
-
-    <li class="list-group-item">
-        <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <a class="glyphicon glyphicon-cog-color"
-                   ng-click="model.createWidget(model.pageId, model.widget)"
-                   href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/image">Image</a>
-            </div>
-            <div class="col-xs-3"></div>
-            <div class="col-sm-3 hidden-xs"></div>
-            <div class="col-xs-3">
-            </div>
-        </div>
-    </li>
-
-    <li class="list-group-item">
-        <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <a class="glyphicon glyphicon-cog-color"
-                   ng-click="model.createWidget(model.pageId, model.widget)"
-                   href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/youtube">Youtube</a>
-            </div>
-            <div class="col-xs-3"></div>
-            <div class="col-sm-3 hidden-xs"></div>
-            <div class="col-xs-3">
-            </div>
-        </div>
-    </li>
-
+<div class="container blackbackground">
+    <ul class="nav nav-sidebar">
+        <li><a href="" ng-click="model.createWidget('HEADING')">
+            Heading</a></li>
+        <li><a href="" ng-click="model.createWidget('IMAGE')">
+            Image</a></li>
+        <li><a href="" ng-click="model.createWidget('YOUTUBE')">
+            YouTube</a></li>
+        <li><a href="" ng-click="model.createWidget('HTML')">
+            HTML</a></li>
+        <li><a href="" ng-click="model.createWidget('TEXT')">
+            Text</a></li>
+    </ul>
 </div>
+
+
+<!--<div class="container-fluid">-->
+
+<!--<li class="list-group-item">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-6 col-sm-3">-->
+<!--<a class="glyphicon glyphicon-cog-color"-->
+<!--ng-click="model.createWidget(model.pageId, model.widget)"-->
+<!--href="w#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/header">Heading</a>-->
+<!--</div>-->
+<!--<div class="col-xs-3"></div>-->
+<!--<div class="col-sm-3 hidden-xs"></div>-->
+<!--<div class="col-xs-3">-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+
+<!--<li class="list-group-item">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-6 col-sm-3">-->
+<!--<a class="glyphicon glyphicon-cog-color"-->
+<!--ng-click="model.createWidget(model.pageId, model.widget)"-->
+<!--href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/image">Image</a>-->
+<!--</div>-->
+<!--<div class="col-xs-3"></div>-->
+<!--<div class="col-sm-3 hidden-xs"></div>-->
+<!--<div class="col-xs-3">-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+
+<!--<li class="list-group-item">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-6 col-sm-3">-->
+<!--<a class="glyphicon glyphicon-cog-color"-->
+<!--ng-click="model.createWidget(model.pageId, model.widget)"-->
+<!--href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/youtube">Youtube</a>-->
+<!--</div>-->
+<!--<div class="col-xs-3"></div>-->
+<!--<div class="col-sm-3 hidden-xs"></div>-->
+<!--<div class="col-xs-3">-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+
+
+<!--<li class="list-group-item">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-6 col-sm-3">-->
+<!--<a class="glyphicon glyphicon-cog-color"-->
+<!--ng-click="model.createWidget(model.pageId, model.widget)"-->
+<!--href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/html">HTML</a>-->
+<!--</div>-->
+<!--<div class="col-xs-3"></div>-->
+<!--<div class="col-sm-3 hidden-xs"></div>-->
+<!--<div class="col-xs-3">-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+
+
+<!--<li class="list-group-item">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-6 col-sm-3">-->
+<!--<a class="glyphicon glyphicon-cog-color"-->
+<!--ng-click="model.createWidget(model.pageId, model.widget)"-->
+<!--href="#!/user/{{model.userId}}/{{model.websiteId}}/{{model.pageId}}/widget/new/text">Text</a>-->
+<!--</div>-->
+<!--<div class="col-xs-3"></div>-->
+<!--<div class="col-sm-3 hidden-xs"></div>-->
+<!--<div class="col-xs-3">-->
+<!--</div>-->
+<!--</div>-->
+<!--</li>-->
+<!--</div>-->

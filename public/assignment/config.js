@@ -119,6 +119,12 @@
                 controllerAs: "model"
             })
 
+            .when("/user/:userId/:websiteId/:pageId/widget/new/text", {
+                templateUrl : "views/widget/templates/widget-text.view.client.html",
+                controller: "widgetNewController",
+                controllerAs: "model"
+            })
+
 
     }
 })();

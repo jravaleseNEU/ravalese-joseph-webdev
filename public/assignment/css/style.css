@@ -91,3 +91,7 @@ a.glyphicon-cog-color {
 .navbar-nav>li, .navbar-nav {
     float: left !important;
 }
+
+.blackbackground {
+    background-color: black;
+}
