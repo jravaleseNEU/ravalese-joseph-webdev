@@ -28,7 +28,7 @@ function findUserById(userId) {
 }
 
 function deleteUser(userId) {
-    return userModel.delete({_id:userId});
+    return userModel.remove({_id:userId});
 }
 
 function addWebsite(userId, websiteId) {

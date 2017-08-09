@@ -39,9 +39,16 @@ function updateUser(req, res) {
 
 function registerUser(req, res) {
     var user = req.body;
-    user._id = (new Date()).getTime() + "";
-    users.push(user);
-    res.send(user);
+
+    userModel
+        .createUser(user)
+        .then(function (user) {
+            res.json(user);
+        })
+
+    // user._id = (new Date()).getTime() + "";
+    // users.push(user);
+    // res.send(user);
 }
 
 function findUser(req, res) {
@@ -99,12 +106,13 @@ function getUserById(req, response) {
     // }
 }
 
-//NOT FINISHED
-function deleteUser(req, res) {
-    userModel
-        .deleteUser(req.params.userId)
-        .then(function (user) {
 
+function deleteUser(req, res) {
+    var userId = req.params.userId;
+    userModel
+        .deleteUser(userId)
+        .then(function (status) {
+            res.sendStatus(200);
         })
 
     // var userId = req.params.userId;
