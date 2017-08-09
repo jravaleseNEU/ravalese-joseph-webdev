@@ -5,7 +5,7 @@ var app = require("../../express");
     app.get("/api/widget/:widgetId", findWidgetById);
     app.post("/api/page/:pageId/widget", createWidget);
     app.put("/api/widget/:widgetId", updateWidget);
-    app.delete("/api/widget/:widgetId", deleteWidget);
+    app.delete("/api/page/:pageId/widget/:widgetId", deleteWidget);
     app.put("/api/page/:pageId/widget", updateWidgetList);
 
     var multer = require('multer'); // npm install multer --save
@@ -41,11 +41,18 @@ var app = require("../../express");
         // var websiteId = req.params.websiteId;
 
         var pageId = req.params.pageId;
-        widget.pageId = pageId;
-        widget._id = (new Date()).getTime() + "";
-        widgets.push(widget);
 
-        res.json(widget);
+        widgetModel
+            .createWidget(pageId, widget)
+            .then(function (widget) {
+                res.json(widget);
+            });
+
+        // widget.pageId = pageId;
+        // widget._id = (new Date()).getTime() + "";
+        // widgets.push(widget);
+        //
+        // res.json(widget);
     }
 
     function updateWidget(req, res) {
@@ -53,37 +60,56 @@ var app = require("../../express");
         var widgetId = req.params.widgetId;
         var widget = req.body;
 
-        for (var u in widgets) {
-            if (widgets[u]._id === widgetId) {
-                widgets[u] = widget;
-                res.send(widget);
-            }
-        }
-        res.sendStatus(404);
+        widgetModel
+            .updateWidget(widgetId, widget)
+            .then(function (widget) {
+                res.json(widget);
+            });
+
+        // for (var u in widgets) {
+        //     if (widgets[u]._id === widgetId) {
+        //         widgets[u] = widget;
+        //         res.send(widget);
+        //     }
+        // }
+        // res.sendStatus(404);
 
     }
 
     function deleteWidget(req, res) {
-
+        var pageId = req.params.pageId;
         var widgetId = req.params.widgetId;
-        // var widget = req.body;
 
-        for (var u in widgets) {
-            if (widgets[u]._id === widgetId) {
-                widgets.splice(u, 1);
-                res.sendStatus(200)
-            }
-        }
+        widgetModel
+            .deleteWidget(pageId, widgetId)
+            .then(function (status) {
+                res.json(status);
+            })
+
+        // for (var u in widgets) {
+        //     if (widgets[u]._id === widgetId) {
+        //         widgets.splice(u, 1);
+        //         res.sendStatus(200)
+        //     }
+        // }
 
     }
 
     function findWidgetById(req, res) {
-        for (var w in widgets) {
-            if (widgets[w]._id === req.params.widgetId) {
-                res.json(widget[w]);
-            }
-        }
-        res.sendStatus(404);
+        var widgetId =req.params.widgetId;
+
+        widgetModel
+            .findWidgetById(widgetId)
+            .then(function (widget) {
+                res.json(widget);
+            })
+
+        // for (var w in widgets) {
+        //     if (widgets[w]._id === req.params.widgetId) {
+        //         res.json(widget[w]);
+        //     }
+        // }
+        // res.sendStatus(404);
     }
 
 
