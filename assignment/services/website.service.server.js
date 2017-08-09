@@ -1,7 +1,7 @@
 var app = require("../../express");
 
 var websiteModel = require("../models/website/website.model.server");
-var userModel = require("../models/user/user.model.server")
+var userModel = require("../models/user/user.model.server");
 
 // http handlers
 
@@ -26,10 +26,13 @@ var websites = [
 function createWebsite(req, res) {
     var website = req.body;
     var userId = req.params.userId;
+
     websiteModel
         .createWebsiteForUser(userId, website)
-        .then(function(websiteDoc) {
-            res.json(websiteDoc)
+        .then(function (websiteDoc) {
+            res.json(websiteDoc);
+        }, function (err) {
+            res.statusCode(500).send(err);
         })
     // website.developerId = userId;
     // website._id = (new Date()).getTime() + "";
@@ -56,6 +59,7 @@ function findWebsiteById(req, res) {
 
 function findWebsitesByUser(req, res) {
     var userId = req.params.userId;
+
     websiteModel
         .findAllWebsitesForUser(userId)
         .then(function (websites) {

@@ -12,8 +12,6 @@ websiteModel.findAllWebsitesForUser = findAllWebsitesForUser;
 websiteModel.addPage = addPage;
 websiteModel.removePage = removePage;
 
-
-var userModel = require ("../user/user.model.server");
 module.exports = websiteModel;
 
 function createWebsiteForUser(userId, website) {
@@ -23,7 +21,7 @@ function createWebsiteForUser(userId, website) {
         .create(website)
         .then(function (websiteDoc) {
             websiteTmp = websiteDoc;
-           return userModel.addWebsite(userId,websiteDoc)
+           return userModel.addWebsite(userId, websiteDoc)
         })
         .then(function (userDoc) {
             return websiteTmp
