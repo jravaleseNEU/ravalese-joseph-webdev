@@ -31,19 +31,27 @@ function createWebsite(req, res) {
         .then(function(websiteDoc) {
             res.json(websiteDoc)
         })
-    website.developerId = userId;
-    website._id = (new Date()).getTime() + "";
-    websites.push(website);
-    res.json(website);
+    // website.developerId = userId;
+    // website._id = (new Date()).getTime() + "";
+    // websites.push(website);
+    // res.json(website);
 }
 
 function findWebsiteById(req, res) {
-    for(var w in websites) {
-        if(websites[w]._id === req.params.websiteId) {
-            res.json(websites[w]);
-        }
-    }
-    res.sendStatus(404);
+
+    websiteModel
+        .findWebsiteById(req.params.websiteId)
+        .then(function (website) {
+            res.json(website);
+        })
+
+
+    // for(var w in websites) {
+    //     if(websites[w]._id === req.params.websiteId) {
+    //         res.json(websites[w]);
+    //     }
+    // }
+    // res.sendStatus(404);
 }
 
 function findWebsitesByUser(req, res) {
@@ -70,26 +78,38 @@ function updateWebsite(req,res) {
     var websiteId = req.params.websiteId;
     var website = req.body;
 
-    for (var u in websites) {
-        if (websites[u]._id === websiteId) {
-            websites[u] = website;
-            res.send(website)
-        }
-    }
-    res.sendStatus(404);
+    websiteModel
+        .updateWebsite(websiteId, website)
+        .then(function (website) {
+            res.json(website);
+        })
+
+    // for (var u in websites) {
+    //     if (websites[u]._id === websiteId) {
+    //         websites[u] = website;
+    //         res.send(website)
+    //     }
+    // }
+    // res.sendStatus(404);
 
 }
 
 function deleteWebsite(req, res) {
     var websiteId = req.params.websiteId;
-    //var website = req.body;
+    var userId = req.params.userId;
 
-    for(var u in websites) {
-        var _website = websites[u];
-        if(_website._id === websiteId) {
-            websites.splice(u,1);
-            res.sendStatus(200);
-        }
-    }
+    websiteModel
+        .deleteWebsite(userId, websiteId)
+        .then(function (status) {
+            res.json(status);
+        });
+    //var website = req.body;
+    // for(var u in websites) {
+    //     var _website = websites[u];
+    //     if(_website._id === websiteId) {
+    //         websites.splice(u,1);
+    //         res.sendStatus(200);
+    //     }
+    // }
 
 }

@@ -8,6 +8,10 @@ websiteModel.updateWebsite = updateWebsite;
 websiteModel.deleteWebsite = deleteWebsite;
 websiteModel.findWebsiteById = findWebsiteById;
 websiteModel.findAllWebsitesForUser = findAllWebsitesForUser;
+websiteModel.addPage = addPage;
+websiteModel.removePage = removePage;
+
+
 var userModel = require ("../user/user.model.server");
 module.exports = websiteModel;
 
@@ -31,18 +35,45 @@ function updateWebsite(websiteId, website) {
         {$set: website});
 }
 
-function deleteWebsite(websiteId) {
+function deleteWebsite(websiteId, userId) {
     return websiteModel
         .remove({_id: websiteId})
         .then(function (status) {
-            userModel.removeWebsite(userId, websiteId)
+            userModel.deleteWebsite(userId, websiteId)
         })
 }
 
 function findWebsiteById(websiteId) {
     return websiteModel.findById(websiteId);
 }
-// Not Finished
+
+
 function findAllWebsitesForUser(userId) {
-    return websiteModel.find({_user: userId});
+    return websiteModel
+        .find({_user: userId})
+        .populate('_user', 'username')
+        .exec();
+}
+
+function addPage(websiteId, pageId) {
+    return websiteModel
+        .findWebsiteById(websiteId)
+        .then(function (website) {
+
+            website.pages.push(pageId);
+            return website.save();
+        })
+    
+}
+
+
+function removePage(websiteId, pageId) {
+    return websiteModel
+        .findWebsiteById(websiteId)
+        .then(function (website) {
+            var index = website.pages.indexOf(pageId);
+            website.pages.splice(index, 1);
+            return website.save();
+        })
+    
 }
