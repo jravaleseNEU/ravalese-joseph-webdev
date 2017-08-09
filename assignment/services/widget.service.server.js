@@ -1,4 +1,5 @@
 var app = require("../../express");
+var widgetModel = require("../models/widget/widget.model.server");
 
 
     app.get("/api/page/:pageId/widget", findWidgetsByPage);
@@ -117,15 +118,20 @@ var app = require("../../express");
         var userId = req.params.userId;
         var pageId = req.params.pageId
 
-        var widget = [];
+        widgetModel.findWidgetsByPageId(pageId)
+            .then(function (widgets) {
+                res.json(widgets);
+            });
 
-        for (var w in widgets) {
-            if (widgets[w].pageId === pageId) {
-                widget.push(widgets[w]);
-            }
-        }
-
-        res.json(widget);
+        // var widget = [];
+        //
+        // for (var w in widgets) {
+        //     if (widgets[w].pageId === pageId) {
+        //         widget.push(widgets[w]);
+        //     }
+        // }
+        //
+        // res.json(widget);
     }
 
     function uploadImage(req, res) {
@@ -163,8 +169,8 @@ var app = require("../../express");
 
     function updateWidgetList(req, res) {
         var pageId = req.params.pageId;
-        var startIndex = parseInt(req.query.initial);
-        var endIndex = parseInt(req.query.final);
+        var start = parseInt(req.query.initial);
+        var end = parseInt(req.query.final);
 
         var widgetsList = [];
 
@@ -173,8 +179,8 @@ var app = require("../../express");
                 widgetsforPage.push(widgets[u]);
             }
         }
-        var firstWidget = widgetsList[startIndex];
-        var lastWidget = widgetsList[endIndex];
+        var firstWidget = widgetsList[start];
+        var lastWidget = widgetsList[end];
 
         widgets.splice(widgets.indexOf(firstWidget), 0, widgets.splice(widgets.indexOf(lastWidget), 1)[0]);
         res.sendStatus(200);
