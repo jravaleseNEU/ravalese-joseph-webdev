@@ -29,7 +29,10 @@
         function createWidget(pageId, widget) {
             var url = "/api/page/" + pageId + "/widget";
 
-            return $http.post(url, widget);
+            return $http.post(url, widget)
+                .then(function (response) {
+                    return response.data;
+                });
         }
 
         function updateWidget(widgetId, widget) {
